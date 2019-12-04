@@ -22,10 +22,15 @@ Note: If your operating system is not Debian-like, adjust the first step
 # Usage
 The script takes four arguments: osd title, setting to display, minimum possible setting, maximum possible setting.
 
-For example:
+Examples:
 ```
 $ osd Volume 70 0 100
 $ osd Volume 80 0 100
 $ osd Volume 90 0 100
 ```
-If consecutive calls are made within the timeout period (2 seconds by default), each subsequent call updates the existing osd instead of creating a new one.
+```
+$ osd Brightness 10 0 15
+$ osd Brightness 11 0 15
+$ osd Brightness 12 0 15
+```
+If subsequent calls to *osd* with the same first argument (osd title) are made within the timeout period (2 seconds by default), the subsequent calls update the existing osd instead of creating a new one.
