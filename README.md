@@ -33,4 +33,4 @@ $ osd Brightness 10 0 15
 $ osd Brightness 11 0 15
 $ osd Brightness 12 0 15
 ```
-If subsequent calls to *osd* with the same first argument (osd title) are made within the timeout period (2 seconds by default), the subsequent calls update the existing osd instead of creating a new one.
+If subsequent calls to *osd* have the same first argument (osd title) and are made within the timeout period (2 seconds by default), the existing osd will be updated (i.e., there will not be multiple osd's stacked on top of one another).
