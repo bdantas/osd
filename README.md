@@ -2,8 +2,7 @@
 Minimalistic meter-style osd (on-screen display) for GNU/Linux
 
 # Purpose
-Create a short-lived osd; repeat calls during timeout period update the existing osd. Example:
-!(http://files.dantas.airpost.net/public/osd.jpg)
+Create a short-lived osd; repeat calls during timeout period update the existing osd.
 
 # What you need
 0. GNU/Linux operating system and this script
