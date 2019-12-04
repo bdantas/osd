@@ -2,7 +2,7 @@
 Minimalistic meter-style osd (on-screen display) for GNU/Linux
 
 # Purpose
-Create a short-lived osd (e.g., to show a changed system setting)
+Create meter-style osd that can be dynamically updated during user-defined timeout period
 
 # What you need
 0. GNU/Linux operating system and this script
@@ -35,4 +35,4 @@ $ osd Brightness 12 0 15
 ```
 If subsequent calls to *osd* have the same first argument (osd title) and are made within the timeout period (2 seconds by default), the existing osd will be updated (i.e., there will not be multiple osd's stacked on top of one another).
 
-If you use a shell script to change your volume, display brightness, or other system setting, *osd* can nicely complement your script by showing the current setting real-time.
+If you use a shell script to change your volume, display brightness, or other system setting, *osd* can nicely complement it by displaying the current setting.
