@@ -19,7 +19,7 @@ $ sudo cp osd /usr/local/bin
 ```
 Note: If your operating system is not Debian-like, adjust the first step
 
-# Usage
+# Usage examples
 The script takes four arguments: osd title, setting to display, minimum possible setting, maximum possible setting.
 
 Examples:
@@ -35,4 +35,5 @@ $ osd Brightness 12 0 15
 ```
 If subsequent calls to *osd* have the same first argument (osd title) and are made within the timeout period (2 seconds by default), the existing osd will be updated (i.e., there will not be multiple osd's stacked on top of one another).
 
-If you use a shell script to change your volume, display brightness, or other system setting, *osd* can nicely complement it by displaying the current setting.
+# Application
+If you use a shell script to change your volume, display brightness, or other system setting, calling *osd* from your script is a convenient way to display the current setting.
