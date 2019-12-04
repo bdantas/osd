@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# osd v4.1
+# osd v4.2
 # Bruno GNUser Dantas GPLv3
 
 # user variables:
@@ -40,8 +40,10 @@ create_osd()
 create_timer()
 {
 	cat << EOF > $timer_script
+#!/bin/sh
 reset_counter() { i=0; }
 trap reset_counter CONT
+
 i=0
 while [ \$i -lt $osd_timeout ]; do
 	sleep 0.1
