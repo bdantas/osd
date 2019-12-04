@@ -4,7 +4,7 @@
 # Bruno "GNUser" Dantas GPLv3
 
 # user variables:
-font="monospace:width=10" # desired font (a monospace/fixed-width font works best)
+font="monospace:width=10" # desired font (use "monospace" or specify a fixed-width font)
 char_px=10                # character width of the above font (in pixels)
 desired_box_char=24       # desired box width (in characters)
 x_pos=50                  # desired x coordinate of osd
