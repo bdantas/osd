@@ -20,11 +20,12 @@ $ sudo cp osd /usr/local/bin
 Note: If your operating system is not Debian-like, adjust the first step
 
 # Usage
-The script takes four arguments: osd title, setting, minimum setting, maximum setting.
+The script takes four arguments: osd title, setting to display, minimum possible setting, maximum possible setting.
 
 For example:
 ```
 $ osd Volume 70 0 100
 $ osd Volume 80 0 100
+$ osd Volume 90 0 100
 ```
-If the two calls are made within the timeout period (2 seconds by default), the second call will update the existing osd instead of creating a new one.
+If consecutive calls are made within the timeout period (2 seconds by default), each subsequent call updates the existing osd instead of creating a new one.
