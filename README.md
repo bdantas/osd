@@ -33,7 +33,7 @@ $ osd Brightness 10 0 15
 $ osd Brightness 11 0 15
 $ osd Brightness 12 0 15
 ```
-If subsequent calls to *osd* have the same first argument (osd title) and are made within the timeout period (2 seconds by default), the existing osd will be updated (i.e., there will not be multiple osd's stacked on top of one another).
+If subsequent calls to *osd* have the same first argument (osd title) and are made within the user-defined timeout period, the existing osd will be updated (i.e., there will not be multiple osd's stacked on top of one another).
 
 # Application
 If you use a shell script to change your volume, display brightness, or other system setting, calling *osd* from your script is a convenient way to display the current setting.
