@@ -66,8 +66,8 @@ reset_timer()
 
 update_osd()
 {
-	# first determine how many bars to show (based on MIN, MAX, and target):
-	n_bars=$(( (target - MIN) * desired_box_char / (MAX - MIN) )) # MIN and MAX are exported from calling script
+	# first determine how many bars to show:
+	n_bars=$(( (target - MIN) * desired_box_char / (MAX - MIN) ))
 	bars=$(printf "%.*s" $n_bars "|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||")
 
 	# now go ahead and update the osd:
