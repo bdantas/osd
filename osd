@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # osd v4.2
-# Bruno GNUser Dantas GPLv3
+# Bruno "GNUser" Dantas GPLv3
 
 # user variables:
 font="monospace:width=10" # desired font (a monospace/fixed-width font works best)
