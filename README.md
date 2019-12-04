@@ -2,7 +2,7 @@
 Minimalistic meter-style on-screen display (osd) for GNU/Linux
 
 # Purpose
-Create a short-lived osd; repeat calls during timeout period update the existing osd
+Create a short-lived osd; repeat calls during timeout period update the existing osd instead of creating a new one
 
 # What you need
 0. GNU/Linux operating system and this script
@@ -20,6 +20,11 @@ $ sudo cp osd /usr/local/bin
 Note: If your operating system is not Debian-like, adjust the first step
 
 # Usage
-The script takes four arguments: Title, setting, minimum setting, maximum setting.
+The script takes four arguments: osd title, setting, minimum setting, maximum setting.
 
-$ osd Volume 
+For example:
+```
+$ osd Volume 70 0 100
+$ osd Volume 80 0 100
+```
+If the two calls are made within the timeout period (2 seconds by default), the second call will update the existing osd instead of creating a new one.
