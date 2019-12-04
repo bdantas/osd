@@ -9,7 +9,7 @@ char_px=10                # character width of the above font (in pixels)
 desired_box_char=24       # desired box width (in characters)
 x_pos=50                  # desired x coordinate of osd
 y_pos=50                  # desired y coordinate of osd box
-osd_timeout=20            # desired timeout in deciseconds (e.g., 20 = 2.0 seconds)
+osd_timeout=15            # desired timeout in deciseconds (e.g., 15 = 1.5 seconds)
 
 main()
 {
