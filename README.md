@@ -1,5 +1,5 @@
 # osd
-Minimalistic meter-style on-screen display (osd) for GNU/Linux
+Minimalistic meter-style osd (on-screen display) for GNU/Linux
 
 # Purpose
 Create a short-lived osd; repeat calls during timeout period update the existing osd instead of creating a new one
