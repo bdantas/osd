@@ -7,6 +7,7 @@ Create meter-style osd that can be dynamically updated during user-defined timeo
 # What you need
 0. GNU/Linux operating system and this script
 1. **dzen2**
+2. If desired, customize "user variables" at top of script
 
 # Installation
 ```
