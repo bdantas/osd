@@ -16,6 +16,7 @@ $ wget https://github.com/bdantas/osd/archive/master.zip
 $ unzip master.zip
 $ cd osd-master
 $ sudo cp osd /usr/local/bin
+$ sudo chmod a+x /usr/local/bin/osd
 ```
 Note: If your operating system is not Debian-like, adjust the first step
 
