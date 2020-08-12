@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# osd v4.2
+# osd v4.3
 # Bruno "GNUser" Dantas GPLv3
 
 # user variables:
@@ -25,43 +25,42 @@ main()
 
 check_if_osd_exists()
 {
-	[ -e $osd_pid_file ] && osd_exists="yes" || osd_exists="no" 
+	[ -e "$osd_pid_file" ] && osd_exists="yes" || osd_exists="no" 
 }
 
 create_osd()
 {
-	mkfifo $osd_pipe
-	exec 3<>$osd_pipe
+	mkfifo "$osd_pipe"
+	exec 3<>"$osd_pipe"
 
 	dzen2 -bg black -fg white -tw $box_px -w $box_px -fn "$font" -h 20 -x $x_pos -y $y_pos -p -l 2 -e 'onstart=uncollapse' <&3 &
-	echo $! >$osd_pid_file
+	echo $! >"$osd_pid_file"
 }
 
 create_timer()
 {
-	cat << EOF > $timer_script
+	cat << EOF > "$timer_script"
 #!/bin/sh
 reset_counter() { i=0; }
 trap reset_counter CONT
-
 i=0
-while [ \$i -lt $osd_timeout ]; do
+while [ \$i -lt "$osd_timeout" ]; do
 	sleep 0.1
 	i=\$(( i + 1 ))
 done
 # time's up! 
-kill -9 $(cat $osd_pid_file)
-rm /tmp/${title}*
+kill -9 "$(cat "$osd_pid_file")"
+rm "/tmp/${title}"*
 EOF
 
-	chmod a+x $timer_script
-	sh $timer_script &
-	echo $! >$timer_pid_file
+	chmod a+x "$timer_script"
+	sh "$timer_script" &
+	echo $! >"$timer_pid_file"
 }
 
 reset_timer()
 {
-	kill -CONT $(cat $timer_pid_file)
+	kill -CONT "$(cat "$timer_pid_file")"
 }
 
 update_osd()
@@ -71,7 +70,7 @@ update_osd()
 	bars=$(printf "%.*s" $n_bars "|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||")
 
 	# now go ahead and update the osd:
-	printf "^tw()$title\n$target\n$bars\n" >$osd_pipe
+	printf "^tw()$title\n$target\n$bars\n" >"$osd_pipe"
 }
 
 # internal variables:
@@ -79,10 +78,10 @@ title="$1"
 target="$2"
 MIN="$3"
 MAX="$4"
-osd_pipe=/tmp/$title-osd-pipe
-osd_pid_file=/tmp/$title-osd-pid
-timer_script=/tmp/$title-timer.sh
-timer_pid_file=/tmp/$title-timer-pid
+osd_pipe="/tmp/$title-osd-pipe"
+osd_pid_file="/tmp/$title-osd-pid"
+timer_script="/tmp/$title-timer.sh"
+timer_pid_file="/tmp/$title-timer-pid"
 box_px=$(( char_px * desired_box_char )) # box width in pixels
 
 main
